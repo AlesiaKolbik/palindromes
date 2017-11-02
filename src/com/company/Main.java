@@ -29,8 +29,8 @@ public class Main {
             if (i >= 1000 && i < 10000) {
                 int f = i % 10;
                 int f2 = ((i - f) / 10) % 10;
-                int f3 = ((i - f - (i - f) / 10)/100)% 10;
-                int f4 = (i - f - f2 * 10 - f3 * 100) / 1000;
+                int f3 = (i /100)% 10;
+                int f4 = i/1000;
                 if (f == f4 && f2 == f3) {
                     System.out.print(i + " ");
                 }
@@ -38,9 +38,8 @@ public class Main {
             if (i >= 10000 && i < 100000) {
                 int n = i % 10;
                 int n2 = ((i - n) / 10) % 10;
-                int n3 = ((i - n - n2 * 10) / 100) % 100;
-                int n4 = ((i - n - n2 * 10 - n3 * 100) / 1000) % 1000;
-                int n5 = (i - n - n2 * 10 - n3 * 100 - n4 * 1000) / 10000;
+                int n4 = (i / 1000) % 10;
+                int n5 = i/ 10000;
                 if (n == n5 && n2 == n4) {
                     System.out.print(i + " ");
                 }
