@@ -8,14 +8,22 @@ public class Main {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите число:");
         int N = in.nextInt();
-        for (int i = 0; i < N; i++) {
-            int num = i;
-            String s1 = new String("i");
-            int len1 = s1.length();
-            for(int j=len1-len1;j<s1.length()/2;j++) {
-
-
+        int n = 0;
+        String digit = Integer.toString(N);
+        int index= digit.length()-1;
+        for (int i = 0; i < digit.length() / 2; i++) {
+            char symbol = digit.charAt(i);
+            char symbolLast = digit.charAt(index);
+            if (symbol == symbolLast) {
+                n++;
+                index--;
             }
+        }
+        if (n == digit.length() / 2) {
+            System.out.print("Число " + N + " является полиндромом.");
+        }
+        else {
+            System.out.print("Число " + N + " не является полиндромом.");
         }
     }
 }
